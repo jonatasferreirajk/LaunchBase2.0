@@ -5,7 +5,7 @@ const user = {
     balance: 0
 };
 
-//Adicionar Transições
+//Adicionar Transações
 function createTransaction(transaction){
     user.transactions.push(transaction);
 
