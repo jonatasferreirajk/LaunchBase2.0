@@ -1,0 +1,51 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap";
+*{
+margin: 0;
+padding: 0;
+border: 0;
+}
+body{
+background: grey;
+font-family: 'Roboto', sans-serif;
+color: khaki;
+}
+header{
+padding: 30px;
+border-bottom: 1px solid black;
+background: rgba(0, 0, 0, 0.1);
+}
+header div{
+text-align: left;
+}
+header div a{
+color: white;
+font-size: 20px;
+line-height: 30px;
+margin: 0 30px;
+text-decoration: initial;
+}
+header div a:hover{
+color: red;
+transition: color 250ms;
+}
+#imagem-logo {
+    text-align: center;
+}
+#imagem-logo img{
+border-radius: 100%;
+border: 3px solid black;
+margin-bottom: 0px;
+height: 250px;
+}
+.links{
+text-align: center;
+}
+#texto{
+text-align: center;
+padding: 30px;
+}
+#texto h1{
+font-size: 42px;
+line-height: 100px;
+color: white;
+}
