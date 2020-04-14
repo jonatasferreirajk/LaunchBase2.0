@@ -77,6 +77,7 @@ header div a:hover {
 
 .card {
     background-color: var(--color-rocket);
+    display: grid;
 }
 
 .card__image-container img {
@@ -91,6 +92,7 @@ header div a:hover {
 .card__info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
 
 .card__price {

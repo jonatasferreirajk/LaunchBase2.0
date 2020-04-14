@@ -23,44 +23,20 @@
     </header>
 
     <section class="cards">
-        <div class="card" id="starter">
-            <div class="card__image-container">
-                <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="starter">
+        {% for conteudo in conteudos %}
+            <div class="card" id="{{conteudo.id}}">
+                <div class="card__image-container">
+                    <img src="https://skylab.rocketseat.com.br/static/{{conteudo.id}}.svg" alt="Imagem de {{conteudo.title}}">
+                </div>
+                <div class="card__content">
+                    <p>{{conteudo.title}}</p>
+                </div>
+                <div class="card__info">
+                    <p>{{conteudo.duration}}</p>
+                    <div class="card__price">{{conteudo.price}}</div>
+                </div>
             </div>
-            <div class="card__content">
-                <p>Cursos 100% online e gratuitos para você entrar com o pé direito nas tecnologias mais desejadas do mercado.</p>
-            </div>
-            <div class="card__info">
-                <p>30 horas</p>
-                <class class="card__price">FREE</class>
-            </div>
-        </div>
-
-        <div class="card" id="launchbase">
-            <div class="card__image-container">
-                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="launchbase">
-            </div>
-            <div class="card__content">
-                <p>Domine programação do zero e tenha acesso às melhores oportunidades do mercado no menor tempo possível.</p>
-            </div>
-            <div class="card__info">
-                <p>40 horas</p>
-                <class class="card__price">12x *29,90R$</class>
-            </div>
-        </div>
-
-        <div class="card" id="gostack">
-            <div class="card__image-container">
-                <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="gostack">
-            </div>
-            <div class="card__content">
-                <p>Treinamento imersivo nas tecnologias mais modernas de desenvolvimento web e mobile para quem não tem tempo a perder.</p>
-            </div>
-            <div class="card__info">
-                <p>40 horas</p>
-                <class class="card__price">12x *59,90R$</class>
-            </div>
-        </div>
+        {% endfor %}
     </section>
 
     <div class="modal-overlay">
