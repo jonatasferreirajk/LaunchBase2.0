@@ -3,7 +3,8 @@ module.exports = [
         id: "eJmx4X0",
         title: "Desenvolva aplicações web robustas e escaláveis",
         duration: "40 min",
-        price:"Free"
+        price:"Free",
+        featured: true
     },
     {
         id: "dWMsyCN",
@@ -15,7 +16,8 @@ module.exports = [
         id: "s2ODSq5",
         title: "React Native 0.62, suporte ao Flipper e nova LogBox | Code/Drops #25",
         duration: "40 min",
-        price:"Free"
+        price:"Free",
+        featured: true
     },
     {
         id: "PlivTrZ",
@@ -27,7 +29,8 @@ module.exports = [
         id: "b4hS4yH",
         title: "Features do ES2020 para o JavaScript | Code/Drops #22",
         duration: "40 min",
-        price:"Free"
+        price:"Free",
+        featured: true
     },
     {
         id: "GZzvA5V",
