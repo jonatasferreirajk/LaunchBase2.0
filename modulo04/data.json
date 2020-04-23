@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://g1.globo.com/",
+      "name": "Dalto",
+      "birth": 655689600000,
+      "gender": "M",
+      "services": "Caça",
+      "create_at": 1587680779213
+    }
+  ]
+}
