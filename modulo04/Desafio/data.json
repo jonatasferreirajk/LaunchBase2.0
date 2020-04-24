@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://g1.globo.com/",
+      "name": "Dalto Dng",
+      "birth": 345686400000,
+      "escolaridade": "Mestrado",
+      "modalidade": "EAD",
+      "áreadeatuação": "Caça",
+      "created_at": 1587749771544
+    }
+  ]
+}
