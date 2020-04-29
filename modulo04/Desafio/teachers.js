@@ -31,7 +31,7 @@ exports.post = function (req, res) {
             return res.send("Please insert All Informations!")
         }
     }
-    let { avatar_url, birth, name, escolaridade, modalidade, áreadeatuação, gender} = req.body
+    let { avatar_url, birth, name, escolaridade, modalidade, areadeatuação, gender} = req.body
 
     birth = Date.parse(birth)
     const created_at = Date.now()
@@ -47,7 +47,7 @@ exports.post = function (req, res) {
         gender,
         escolaridade,
         modalidade,
-        áreadeatuação,
+        areadeatuação,
         created_at
     })
 
@@ -77,4 +77,49 @@ exports.edit = function(req, res){
     }
     
     return res.render('teachers/edit', {teacher})
+}
+
+//put
+
+exports.put = function(req, res){
+    const {id} = req.body
+    let index = 0;
+    const foundTeacher = data.teachers.find(function(teacher, foundIndex){
+        if( id == teacher.id){
+            index = foundIndex
+            return true
+        }
+    })
+
+    if(!foundTeacher) return res.send("Teacher Not Found! Try Again!")
+
+    const teacher = {
+        ...foundTeacher,
+        ...req.body,
+        birth : Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teacher
+    fs.writeFile("data.json", JSON.stringify(data,null,2), function(err){
+        if(err){
+            return res.send("Write File Error!")
+        }
+        return res.redirect(`/teachers/${id}`)
+    })
+}
+
+//delete
+exports.delete = function(req, res){
+    const {id} = req.body
+    const filteredTeachers = data.teachers.filter(function(teacher){
+        return teacher.id != id
+    })
+
+    data.teachers = filteredTeachers
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        res.send("Write Error FILE!")
+    })
+
+    return res.redirect('/teachers')
 }

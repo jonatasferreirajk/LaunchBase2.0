@@ -1,14 +1,24 @@
 {
   "teachers": [
     {
-      "id": 1,
+      "id": "1",
       "avatar_url": "https://source.unsplash.com/collection/8874679/500x500",
-      "name": "Dalto Dng",
-      "birth": 345686400000,
-      "escolaridade": "Mestrado",
+      "name": "Dalto Dunga",
+      "birth": -64627200000,
+      "escolaridade": "Ensino Superior Completo",
       "modalidade": "EAD",
-      "areadeatuação": "Caça, História, Pesca",
+      "areadeatuação": "Caça, História, Pesca, Construção",
       "created_at": 1587749771544
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/8874679/500x500",
+      "name": "Deyde Costa",
+      "birth": 4924800000,
+      "escolaridade": "Doutorado",
+      "modalidade": "Presencial",
+      "areadeatuação": "Cálculo I, G.A",
+      "created_at": 1588188123119
     }
   ]
 }
