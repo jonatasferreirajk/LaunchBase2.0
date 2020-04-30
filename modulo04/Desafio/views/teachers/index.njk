@@ -1,38 +1,27 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card">
-        <section class="avatar" style="background:
-        url(https://source.unsplash.com/collection/8874679/500x500)
-        no-repeat center center / cover"></section>
-        <section class="details">
-            <h3>Detalhes</h3>
-            <div class="item">
-                <div>Nome Completo</div>
-                <div>Girafales Linguiça</div>
-            </div>
-            <div class="item">
-                <div>Idade</div>
-                <div>53 anos</div>
-            </div>
-            <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>Mestrado</div>
-            </div>
-            <div class="item">
-                <div>Modalidade de Aula</div>
-                <div>EAD</div>
-            </div>
-            <div class="item">
-                <div>Acompanhamento</div>
-                <span>TCC</span>
-                <span>Redes</span>
-                <span>Programação I</span>
-            </div>
-             <div class="item">
-                <div>Desde</div>
-                <div>12/03/2014</div>
-            </div>
-        </section>
+    <div class="card table-container">
+       <table width="100%">
+            <thead>
+                <tr>
+                    <th>Teacher</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
+                            {{teacher.name}}
+                        </td>
+                        <td>{{teacher.areadeatuação}}</td>
+                        <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+                    </tr>
+                {% endfor %} 
+            </tbody>
+       </table>
     </div>
 {% endblock content %}
