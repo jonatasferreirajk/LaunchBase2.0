@@ -1,23 +1,26 @@
 {
-  "members": [],
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/collection/8874679/500x500",
+      "name": "Kiko Beluhdo",
+      "email": "kiko@gmail.com",
+      "birth": 633830400000,
+      "gender": "F",
+      "blood": "AB+",
+      "weight": "80",
+      "height": "120"
+    }
+  ],
   "instructors": [
     {
-      "id": 2,
+      "id": 1,
       "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
       "name": "Dalto Dng",
       "birth": 790560000000,
       "gender": "M",
       "services": "Crossfit, Zumba",
       "create_at": 1587997334063
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
-      "name": "Dalto",
-      "birth": 345686400000,
-      "gender": "M",
-      "services": "Crossfit, Zumba",
-      "create_at": 1587997971904
     }
   ]
 }
