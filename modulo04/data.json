@@ -10,6 +10,17 @@
       "blood": "AB+",
       "weight": "80",
       "height": "120"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/8874679/500x500",
+      "name": "Otavio King",
+      "email": "ursodorei@gmail.com",
+      "birth": 1105747200000,
+      "gender": "M",
+      "blood": "O-",
+      "weight": "80",
+      "height": "161"
     }
   ],
   "instructors": [
