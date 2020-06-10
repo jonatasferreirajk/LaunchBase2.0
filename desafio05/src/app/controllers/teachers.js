@@ -1,9 +1,11 @@
-const { age, date } = require('../../lib/utils')
 
+
+const Teacher = require('/home/jonatas/Área de Trabalho/LauchBase2.0/desafio05/src/app/models/teacher')
 module.exports = {
     index(req, res) {
-        return res.render("teachers/index")
-
+        Teacher.all(function(teachers){
+            return res.render("teachers/index", {teachers})
+        })
     },
     create(req, res) {
         return res.render("teachers/create")
@@ -18,9 +20,9 @@ module.exports = {
                 return res.send("Please insert All Informations!")
             }
         }
-        let { avatar_url, birth, name, escolaridade, modalidade, areadeatuação, gender } = req.body
-
-        return
+       Teacher.create(req.body, function(teacher){
+           return res.redirect(`/teachers/${teacher.id}`)
+       })
     },
     show(req, res) {
         return

@@ -1,55 +1,46 @@
 <div class="item">
-                <div>Avatar URL</div>
-                <div>
-                    <input type="url" name="avatar_url" id="" placeholder="http://" value="{{teacher.avatar_url}}">
-                </div>
-            </div>
-            <div class="item">
-                <div>Nome Completo</div>
-                <div>
-                    <input type="text" name="name" placeholder="Nome do Professor" value="{{teacher.name}}">
-                </div>
-            </div>
-            <div class="item">
-                <div>Data de Nascimento </div>
-                <input type="date" name="birth" value="{{teacher.birth}}">
-            </div>
-            <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>
-                   <select name="escolaridade">
-                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                        <option value="Ensino Superior Completo" selected>Ensino Superior Completo</option>
-                        <option value="Mestrado">Mestrado</option>
-                        <option value="Doutorado">Doutorado</option>
-                        <input type="text" disabled="disabled" value="{{teacher.escolaridade}}">
-                   </select>
-                </div>
-            </div>
-            <div class="item">
-                <div>Modalidade de Aula</div>
-                <div>
-                    <span>
-                        <input
-                        type="radio" 
-                        name="modalidade" 
-                        value="Presencial" 
-                        {% if teacher.modalidade == 'Presencial' %}
-                        checked
-                        {% endif %}>Presencial
-                    </span>
-                    <span><input 
-                            type="radio" 
-                            name="modalidade" 
-                            value="EAD" 
-                            {% if teacher.modalidade == 'EAD' %}
-                            checked
-                            {% endif %}>EAD
-                        </span>
-                </div>
-            </div>
-            <div class="item">
-                <div>Área de atuação</div>
-                <input type="text" name="areadeatuação" placeholder="Disciplinas que podem ser lecionadas" value="{{teacher.areadeatuação}}">
-            </div>
-             <button type="submit">Salvar</button>
+    <div>Avatar URL</div>
+    <div>
+        <input type="url" name="avatar_url" id="" placeholder="http://" value="{{teacher.avatar_url}}">
+    </div>
+</div>
+<div class="item">
+    <div>Nome Completo</div>
+    <div>
+        <input type="text" name="name" placeholder="Nome do Professor" value="{{teacher.name}}">
+    </div>
+</div>
+<div class="item">
+    <div>Data de Nascimento
+    </div>
+    <input type="date" name="birth" value="{{teacher.birth}}">
+</div>
+<div class="item">
+    <div>Grau de Escolaridade</div>
+    <div>
+        <select name="education_level">
+            <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+            <option value="Ensino Superior Completo" selected="selected">Ensino Superior Completo</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutorado">Doutorado</option>
+            <input type="text" disabled="disabled" value="{{teacher.education_level}}">
+        </select>
+    </div>
+</div>
+<div class="item">
+    <div>Modalidade de Ensino</div>
+    <div>
+        <span>
+            <input type="radio" name="classtype" value="EAD" {% if teacher.classtype == "EAD" %} checked="checked" {% endif %}>EAD
+        </span>
+        <span>
+            <input type="radio" name="classtype" value="Presencial" {% if teacher.classtype == "Presencial" %} checked="checked" {% endif %}>Presencial</span>
+    </div>
+</div>
+<div class="item">
+    <div>Área de atuação</div>
+    <div>
+        <input type="text" name="subjectstaught" placeholder="Separe as matérias lecionadas por vírgula" value="{{ teacher.subjectstaught }}">
+    </div>
+</div>
+<button type="submit">Salvar</button>
