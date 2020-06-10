@@ -1,5 +1,4 @@
-
-
+const { age, date } = require('../../lib/utils')
 const Teacher = require('/home/jonatas/Área de Trabalho/LauchBase2.0/desafio05/src/app/models/teacher')
 module.exports = {
     index(req, res) {
@@ -25,7 +24,15 @@ module.exports = {
        })
     },
     show(req, res) {
-        return
+        Teacher.find(req.params.id, function(teacher){
+            if(!teacher) return res.send("Teacher not Found!")
+            teacher.age = age(teacher.birth)
+            
+            teacher.subjectstaught = teacher.subjectstaught.split(",")
+            teacher.created_at = date(teacher.created_at).format
+
+            return res.render("teachers/show", {teacher})
+        })
 
     },
     edit(req, res) {
