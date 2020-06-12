@@ -36,8 +36,12 @@ module.exports = {
 
     },
     edit(req, res) {
-
-        return
+        Teacher.find(req.params.id, function(teacher){
+            if(!teacher) return res.send("Teacher not Found!")
+            teacher.birth = date(teacher.birth).iso
+            teacher.created_at = date(teacher.created_at).format
+            return res.render("teachers/edit", {teacher})
+        })
     },
     put(req, res) {
         const keys = Object.keys(req.body)
@@ -47,11 +51,14 @@ module.exports = {
                 return res.send("Please insert All Informations!")
             }
         }
-        return
+        Teacher.update(req.body, function(){
+            return res.redirect(`/teachers/${req.body.id}`)
+        })
 
     },
     delete(req, res) {
-
-        return
+        Teacher.delete(req.body.id, function(){
+            return res.redirect(`/teachers`)
+        })
     }
 }
