@@ -10,7 +10,10 @@ module.exports = {
     },
 
     create(req, res) {
-        return res.render('members/create');
+        Member.instructorsSelectOptions(function(options){
+            return res.render('members/create', {instructorOptions : options})
+        })
+        
     },
 
     post(req, res) {
@@ -39,8 +42,10 @@ module.exports = {
         Member.find(req.params.id, function(member){
             if(!member) return res.send("member not Found!")
             member.birth = date(member.birth).iso
-            
-            return res.render("members/edit", {member})
+
+            Member.instructorsSelectOptions(function(options){
+                return res.render('members/edit', {member, instructorOptions : options})
+            })
         })
     },
 
