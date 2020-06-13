@@ -7,8 +7,9 @@ module.exports = {
         })
     },
     create(req, res) {
-        return res.render("students/create")
-
+        Student.teachersSelectOptions(function(options){
+            return res.render('students/create', {teacherOptions: options})
+        })
     },
     post(req, res) {
 
@@ -38,8 +39,9 @@ module.exports = {
         Student.find(req.params.id, function(student){
             if(!student) return res.send("Student not Found!")
             student.birth = date(student.birth).iso
-            student.created_at = date(student.created_at).format
-            return res.render("students/edit", {student})
+            Student.teachersSelectOptions(function(options){
+                return res.render('students/edit', {student, teacherOptions: options})
+            })
         })
     },
     put(req, res) {

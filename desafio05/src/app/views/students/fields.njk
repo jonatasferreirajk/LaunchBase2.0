@@ -25,14 +25,19 @@
     <div>Ano Escolar</div>
     <div>
         <select name="anoescolar">
-            <option value="5º Ano Fundamental" > 5º Ano Fundamental</option>
-            <option value="6º Ano Fundamental" > 6º Ano Fundamental</option>
-            <option value="7º Ano Fundamental" > 7º Ano Fundamental</option>
-            <option value="8º Ano Fundamental" > 8º Ano Fundamental</option>
-            <option value="9º Ano Fundamental" > 9º Ano Fundamental</option>
-            <option value="1º Ano Ensino Médio" >1º Ano Ensino Médio</option>
-            <option value="2º Ano Ensino Médio" >2º Ano Ensino Médio</option>
-            <option value="3º Ano Ensino Médio" >3º Ano Ensino Médio</option>
+            <option value="5º Ano Fundamental">
+                5º Ano Fundamental</option>
+            <option value="6º Ano Fundamental">
+                6º Ano Fundamental</option>
+            <option value="7º Ano Fundamental">
+                7º Ano Fundamental</option>
+            <option value="8º Ano Fundamental">
+                8º Ano Fundamental</option>
+            <option value="9º Ano Fundamental">
+                9º Ano Fundamental</option>
+            <option value="1º Ano Ensino Médio">1º Ano Ensino Médio</option>
+            <option value="2º Ano Ensino Médio">2º Ano Ensino Médio</option>
+            <option value="3º Ano Ensino Médio">3º Ano Ensino Médio</option>
         </select>
     </div>
 </div>
@@ -40,6 +45,18 @@
     <div>Carga Horária Semanal (Horas)</div>
     <div>
         <input type="number" name="cargahoraria" value="{{student.cargahoraria}}">
+    </div>
+</div>
+<div class="item">
+    <div>Professor</div>
+    <div>
+        <select name="teacher">
+            {% for teacher in teacherOptions %}
+                <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected="selected" {%endif%}>
+                    {{teacher.name}}
+                </option>
+            {% endfor %}
+        </select>
     </div>
 </div>
 <button type="submit">Salvar</button>
