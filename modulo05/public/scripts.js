@@ -9,7 +9,7 @@ for (item of menuItems) {
 
 //Algoritmo de Paginação no Front End
 
-function pagination(selectedPage, totalPages) {
+function paginate(selectedPage, totalPages) {
   let totalPages = 20,
     selectedPage = 6,
     pages = [],
@@ -36,3 +36,7 @@ function pagination(selectedPage, totalPages) {
   }
   return pages
 }
+
+const pagination = document.querySelector(".pagination")
+const page = +pagination.dataset.page
+const total = +pagination.dataset.total
