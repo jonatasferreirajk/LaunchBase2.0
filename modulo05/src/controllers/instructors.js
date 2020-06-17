@@ -16,23 +16,15 @@ module.exports = {
             limit,
             offset,
             callback(instructors){
+                const pagination = {
+                    total,
+                    page
+                }
                 return res.render("instructors/index", {instructors, filter})
             }
         }
         
         Instructor.paginate(params)
-
-
-
-        /*if(filter){
-            Instructor.findBy(filter, function(instructors){
-                return res.render("instructors/index", {instructors, filter})
-            })
-        }else{
-            Instructor.all(function (instructors) {
-                return res.render("instructors/index", {instructors})
-            })
-        }*/
     },
 
     create(req, res) {
