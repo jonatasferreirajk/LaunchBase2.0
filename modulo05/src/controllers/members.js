@@ -24,7 +24,7 @@ module.exports = {
         }
         
         Member.paginate(params)
-
+     
     },
 
     create(req, res) {
