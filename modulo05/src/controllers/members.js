@@ -3,9 +3,27 @@ const Member = require('/home/jonatas/Área de Trabalho/LauchBase2.0/modulo05/sr
 
 module.exports = {
     index(req, res) {
-        Member.all(function (members) {
-            return res.render("members/index", {members})
-        })
+        let { filter, page, limit}  = req.query
+
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(members){
+                const pagination = {
+                    total: Math.ceil(members[0].total / limit),
+                    page
+                }
+                return res.render("members/index", {members, pagination, filter})
+            }
+        }
+        
+        Member.paginate(params)
 
     },
 
