@@ -2,8 +2,29 @@ const { age, date } = require('../../lib/utils')
 const Teacher = require('/home/jonatas/Área de Trabalho/LauchBase2.0/desafio05/src/app/models/teacher')
 module.exports = {
     index(req, res) {
-        const {filter} = req.query
-        if(filter){
+        let {filter, page, limit} = req.query
+
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers){
+                return res.render("teachers/index", {teachers, filter})
+            }
+        }
+
+        Teacher.paginate(params)
+
+
+        
+
+
+        /*if(filter){
             Teacher.findBy(filter, function(teachers){
                 return res.render("teachers/index", {teachers, filter})
             })
@@ -11,7 +32,7 @@ module.exports = {
             Teacher.all(function(teachers){
                 return res.render("teachers/index", {teachers})
             })
-        }
+        }*/
     },
     create(req, res) {
         return res.render("teachers/create")
